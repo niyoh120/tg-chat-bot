@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "tg-chatgpt-bot"
+version = "0.1.0"
+description = ""
+authors = ["niyoh <zhrh120@gmail.com>"]
+readme = "README.md"
+# packages = [{include = "tg_chatgpt_bot"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+python-telegram-bot = "^20.1"
+pydantic = {extras = ["dotenv"], version = "^1.10.5"}
+revChatGPT = "^3.1.4"
+EdgeGPT = "^0.0.55"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
