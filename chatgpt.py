@@ -1,8 +1,5 @@
-import logging
-from revChatGPT.V1 import AsyncChatbot, log
+from revChatGPT.V1 import AsyncChatbot, Chatbot
 import pydantic as pyd
-
-log.setLevel(logging.DEBUG)
 
 class Config(pyd.BaseSettings):
     access_token:str
@@ -11,4 +8,9 @@ class Config(pyd.BaseSettings):
         env_prefix = "chatgpt_"
 
 config = Config()
-chatbot = AsyncChatbot(config=config.dict())
+
+def new_async_bot():
+    return AsyncChatbot(config=config.dict())
+
+def new_bot():
+    return Chatbot(config=config.dict())
